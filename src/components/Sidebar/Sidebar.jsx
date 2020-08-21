@@ -30,7 +30,6 @@ const Sidebar = () => {
         }))
       )
     );
-    console.log(channels);
   }, [channels]);
 
   return (
@@ -56,10 +55,20 @@ const Sidebar = () => {
       <hr />
       <SidebarOption Icon={ExpandMoreIcon} title="Channels" />
       <hr />
-      <SidebarOption Icon={AddIcon} title="Add Channel" />
+      <SidebarOption
+        Icon={AddIcon}
+        title="Add Channel"
+        addChannelOption="addchannel"
+      />
 
       {channels.map((channel) => {
-        return <SidebarOption title={channel.name} id={channel.id} />;
+        return (
+          <SidebarOption
+            key={channel.id}
+            title={channel.name}
+            id={channel.id}
+          />
+        );
       })}
     </div>
   );
