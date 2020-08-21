@@ -3,6 +3,8 @@
   border-top: 1px solid #49274b;
   max-width: 260px;
   color: white;
+  overflow-y: scroll;
+  padding-bottom: 50px;
 }
 
 .sidebar__header {

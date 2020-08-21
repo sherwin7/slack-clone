@@ -4,8 +4,10 @@ import { useParams } from 'react-router-dom';
 import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 
-import { db } from '../../config/firebase';
 import Message from '../Message/Message';
+import ChatInput from './ChatInput';
+
+import { db } from '../../config/firebase';
 import './Chat.css';
 
 const Chat = () => {
@@ -29,9 +31,6 @@ const Chat = () => {
       );
   }, [roomId]);
 
-  console.log(roomDetails);
-  console.log(roomMessages);
-
   return (
     <div className="chat">
       <div className="chat__header">
@@ -53,6 +52,8 @@ const Chat = () => {
           <Message key={roomMessages.indexOf(data)} data={data} />
         ))}
       </div>
+
+      <ChatInput channelName={roomDetails?.name} channelId={roomId} />
     </div>
   );
 };
