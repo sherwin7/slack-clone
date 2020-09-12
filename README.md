@@ -4,5 +4,4 @@ https://slack-clone-dbfff.web.app
 
 Technologies used :
 
-React
-Firebase
+React, Firebase
